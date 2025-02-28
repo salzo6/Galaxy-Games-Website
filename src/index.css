@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-white font-inter;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-900 rounded-full
+           font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg
+           hover:shadow-blue-500/25 focus:outline-none focus:ring-2 focus:ring-blue-500/50;
+  }
+  
+  .card {
+    @apply bg-blue-950/30 backdrop-blur-lg rounded-2xl p-6 border border-blue-900/50
+    transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/10
+    hover:border-blue-500/50;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-white mb-8 font-flux;
+  }
+
+  .nav-link {
+    @apply text-gray-400 hover:text-white transition-colors duration-200;
+  }
+}
+
+.font-flux {
+  font-family: 'Black Ops One', system-ui;
+  letter-spacing: 0.05em;
+}
+
+.glow {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
