@@ -1,9 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ParticleBackground from '../components/ParticleBackground';
 
 export default function SpaceBlastPrivacy() {
   return (
     <div className="min-h-screen bg-black pt-20">
+      <div className="absolute inset-0 z-0 opacity-40">
+        <ParticleBackground />
+      </div>
       <div className="max-w-4xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

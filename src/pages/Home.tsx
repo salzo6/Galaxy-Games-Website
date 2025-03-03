@@ -57,7 +57,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: 50 }}
                 transition={{ duration: 0.5 }}
-                className="card"
+                className="card bg-gradient-to-br from-blue-950/30 via-indigo-950/20 to-cyan-950/30"
               >
                 <Brain className="w-12 h-12 text-blue-400 mb-4" />
                 <h3 className="text-2xl font-bold mb-4">AI Automation</h3>
@@ -72,7 +72,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: 50 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="card"
+                className="card bg-gradient-to-br from-blue-950/30 via-indigo-950/20 to-cyan-950/30"
               >
                 <Smartphone className="w-12 h-12 text-blue-400 mb-4" />
                 <h3 className="text-2xl font-bold mb-4">Mobile Apps</h3>
@@ -87,7 +87,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: 50 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="card"
+                className="card bg-gradient-to-br from-blue-950/30 via-indigo-950/20 to-cyan-950/30"
               >
                 <Globe className="w-12 h-12 text-blue-400 mb-4" />
                 <h3 className="text-2xl font-bold mb-4">Web Development</h3>
