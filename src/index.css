@@ -40,3 +40,9 @@
 .glow {
   box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
 }
+
+@media screen and (min-width:768px) {
+  .abtImg {
+    @apply w-[350px]
+  }
+}

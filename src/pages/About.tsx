@@ -67,7 +67,7 @@ export default function About() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
+              className="relative abtImg"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-full blur-md opacity-30 animate-pulse" />
               <img 
