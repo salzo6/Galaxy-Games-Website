@@ -4,19 +4,39 @@ import Typewriter from 'typewriter-effect';
 import { Brain, Smartphone, Globe, ChevronDown } from 'lucide-react';
 import ParticleBackground from '../components/ParticleBackground';
 import { Link } from 'react-router-dom';
+import { WavyBackground } from '../components/ui/wavy-background';
 
 export default function Home() {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   return (
     <div className="relative min-h-screen bg-black overflow-hidden">
       <ParticleBackground />
       
-      {/* Hero Section */}
       <section className="min-h-screen flex flex-col items-center justify-center relative px-4">
+        {/* Wave Background */}
+        <div className="absolute inset-0 z-0">
+          <WavyBackground
+            colors={['#1E1E3F', '#2E3192', '#1E40AF', '#1E3A8A']}
+            waveWidth={50}
+            backgroundFill="transparent"
+            blur={5}
+            speed="slow"
+            waveOpacity={0.3}
+            className="h-full"
+          />
+        </div>
+        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center max-w-4xl mx-auto"
+          className="text-center max-w-4xl mx-auto relative z-10"
         >
           <h1 className="text-5xl md:text-7xl font-flux mb-6">
             <Typewriter
@@ -33,7 +53,7 @@ export default function Home() {
           <p className="text-xl md:text-2xl text-gray-400 mb-8">
             Transforming businesses through cutting-edge AI, mobile apps, and web solutions
           </p>
-          <button className="btn-primary">
+          <button className="btn-primary" onClick={scrollToContact}>
             Let's Build Together
           </button>
         </motion.div>
@@ -41,7 +61,7 @@ export default function Home() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-10"
+          className="absolute bottom-10 z-10"
         >
           <ChevronDown size={32} className="text-blue-400" />
         </motion.div>

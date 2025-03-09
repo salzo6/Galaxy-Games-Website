@@ -23,6 +23,11 @@
     hover:border-blue-500/50;
   }
 
+  .cardNoHover {
+    @apply bg-blue-950/30 backdrop-blur-lg rounded-2xl p-6 border border-blue-900/50
+    transition-all duration-300;
+  }
+
   .section-title {
     @apply text-4xl md:text-5xl font-bold text-white mb-8 font-flux;
   }

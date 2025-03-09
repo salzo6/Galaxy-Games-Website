@@ -4,7 +4,7 @@ import { Instagram } from 'lucide-react';
 export default function Footer() {
   return (
     <footer className="bg-black/50 backdrop-blur-lg border-t border-blue-900/30 py-6">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-4 text-center">
         <div className="flex justify-center items-center space-x-6">
           <a
             href="https://www.instagram.com/galaxy_games_ig?igsh=cjJjdGVtNGdlbGVv&utm_source=qr"
@@ -29,6 +29,9 @@ export default function Footer() {
             </svg>
           </a>
         </div>
+        <p className="text-gray-300">
+          Copyright © 2025 Galaxy Tech - All Rights Reserved.
+        </p>
       </div>
     </footer>
   );
