@@ -74,7 +74,7 @@ export default function MobileApps() {
                 <h3 className="text-3xl font-flux bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-500">
                   SpaceBlast
                 </h3>
-                <p className="text-gray-800 dark:text-gray-200 text-lg">
+                <p className="text-gray-400 dark:text-gray-200 text-lg">
                   Take control of a powerful spaceship and navigate through
                   treacherous space, destroying asteroids while avoiding
                   collisions. Test your reflexes and precision in this intense
@@ -122,7 +122,7 @@ export default function MobileApps() {
                 <h3 className="text-3xl font-flux bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
                   Nebula Dash
                 </h3>
-                <p className="text-gray-800 dark:text-gray-200 text-lg">
+                <p className="text-gray-400 dark:text-gray-200 text-lg">
                   A demonstration of AI-powered game development, Nebula Dash
                   features an astronaut running through a spaceship while dodging
                   obstacles. This project showcases how modern AI tools can
