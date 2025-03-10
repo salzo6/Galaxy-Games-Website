@@ -32,26 +32,28 @@ export default function Home() {
       const form = e.target;
       const formData = new FormData(form);
       
-      const response = await fetch('https://formspree.io/f/mnnpqazb', {
-        method: 'POST',
-        body: formData,
-        headers: {
-          Accept: 'application/json'
-        }
-      });
-      
-      if (response.ok) {
+      // For Netlify's AJAX submission
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+      .then(() => {
         setFormStatus({ submitting: false, submitted: true, error: null });
         form.reset();
-      } else {
-        const data = await response.json();
-        throw new Error(data.error || 'Form submission failed');
-      }
+      })
+      .catch(error => {
+        setFormStatus({ 
+          submitting: false, 
+          submitted: false, 
+          error: "Form submission failed. Please try again."
+        });
+      });
     } catch (error) {
       setFormStatus({ 
         submitting: false, 
         submitted: false, 
-        error: error.message || 'Something went wrong. Please try again later.'
+        error: "Something went wrong. Please try again later."
       });
     }
   };
@@ -196,7 +198,16 @@ export default function Home() {
                 </motion.div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form 
+                name="contact" 
+                method="POST" 
+                data-netlify="true" 
+                onSubmit={handleSubmit}
+                className="space-y-6"
+              >
+                {/* Required hidden input for Netlify forms */}
+                <input type="hidden" name="form-name" value="contact" />
+                
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <input
                     type="text"
