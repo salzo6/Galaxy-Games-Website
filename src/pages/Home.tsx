@@ -29,31 +29,25 @@ export default function Home() {
     setFormStatus({ submitting: true, submitted: false, error: null });
     
     try {
-      const form = e.target;
-      const formData = new FormData(form);
+      const formData = new FormData(e.target);
       
-      // For Netlify's AJAX submission
-      fetch("/", {
+      const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString()
-      })
-      .then(() => {
-        setFormStatus({ submitting: false, submitted: true, error: null });
-        form.reset();
-      })
-      .catch(error => {
-        setFormStatus({ 
-          submitting: false, 
-          submitted: false, 
-          error: "Form submission failed. Please try again."
-        });
+        body: new URLSearchParams(formData).toString(),
       });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      setFormStatus({ submitting: false, submitted: true, error: null });
+      e.target.reset();
     } catch (error) {
       setFormStatus({ 
         submitting: false, 
         submitted: false, 
-        error: "Something went wrong. Please try again later."
+        error: "Form submission failed. Please try again."
       });
     }
   };
@@ -199,14 +193,19 @@ export default function Home() {
               </div>
             ) : (
               <form 
-                name="contact" 
-                method="POST" 
-                data-netlify="true" 
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
                 onSubmit={handleSubmit}
                 className="space-y-6"
               >
-                {/* Required hidden input for Netlify forms */}
                 <input type="hidden" name="form-name" value="contact" />
+                <p className="hidden">
+                  <label>
+                    Don't fill this out if you're human: <input name="bot-field" />
+                  </label>
+                </p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <input

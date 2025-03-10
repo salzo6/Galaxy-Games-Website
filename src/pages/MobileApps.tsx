@@ -40,7 +40,7 @@ export default function MobileApps() {
           >
             <div className="flex flex-col md:flex-row items-center gap-6">
               <img
-                src="/src/Images/galaxy-games-logo.png"
+                src="/images/galaxy-games-logo.png"
                 alt="Galaxy Games"
                 className="w-32 h-32 rounded-3xl shadow-lg"
               />
@@ -49,7 +49,7 @@ export default function MobileApps() {
                   Galaxy Games
                 </h3>
                 <p className="text-gray-400 mb-4">
-                  Creativity has always been at the core of our work, driving passion for game development. We thrive on designing unique experiences, blending technology, storytelling, and innovation to create immersive and engaging worlds. From mechanics to aesthetics, every detail is an opportunity to push boundaries and craft something truly memorable. For us, game development is more than just coding—it’s about bringing ideas to life in a way that captivates and inspires.
+                  Creativity has always been at the core of our work, driving passion for game development. We thrive on designing unique experiences, blending technology, storytelling, and innovation to create immersive and engaging worlds. From mechanics to aesthetics, every detail is an opportunity to push boundaries and craft something truly memorable. For us, game development is more than just coding—it's about bringing ideas to life in a way that captivates and inspires.
                 </p>
               </div>
             </div>
@@ -65,7 +65,7 @@ export default function MobileApps() {
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-1/3">
                 <img
-                  src="/src/Images/SpaceBlast-app-icon.png"
+                  src="/images/SpaceBlast-app-icon.png"
                   alt="SpaceBlast"
                   className="w-48 h-48 rounded-3xl shadow-lg mx-auto"
                 />
@@ -113,7 +113,7 @@ export default function MobileApps() {
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-1/3">
                 <img
-                  src="/src/Images/nebula-dash-app-icon.png"
+                  src="/images/nebula-dash-app-icon.png"
                   alt="Nebula Dash"
                   className="w-48 h-48 rounded-3xl shadow-lg mx-auto"
                 />

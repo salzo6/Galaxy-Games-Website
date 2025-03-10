@@ -71,7 +71,7 @@ export default function About() {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-full blur-md opacity-30 animate-pulse" />
               <img 
-                src="src/Images/gradphoto.png" 
+                src="/images/gradphoto.png" 
                 alt="Salvatore Papia" 
                 className="w-64 h-64 object-cover rounded-full border-4 border-teal-500/50 relative z-10"
               />
