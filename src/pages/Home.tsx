@@ -30,15 +30,61 @@ export default function Home() {
     
     try {
       const formData = new FormData(e.target);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const message = formData.get('message');
       
-      const response = await fetch("/", {
+      // Submit to Netlify
+      const netlifyResponse = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString(),
       });
 
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
+      if (!netlifyResponse.ok) {
+        throw new Error('Netlify form submission failed');
+      }
+
+      // Submit to Airtable
+      const airtableResponse = await fetch('https://api.airtable.com/v0/appgOEJawhXKBhsc1/Table%201', {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer patGj7lr04WM76gbS.f5d47a9bec94383f599c77641fe859b00b3d79a2b06ffb2026fa28698277c1fd',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          records: [
+            {
+              fields: {
+                Name: name,
+                Email: email,
+                Message: message,
+                Status: "False"
+              }
+            }
+          ]
+        })
+      });
+
+      if (!airtableResponse.ok) {
+        throw new Error('Airtable submission failed');
+      }
+
+      // Submit to Make.com webhook
+      const makeWebhookResponse = await fetch('https://hook.us2.make.com/bdwlkysvlgsyr4eilyvfyjlbnuo8vdwc', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain'
+        },
+        body: JSON.stringify({
+          Name: name,
+          Email: email,
+          Message: message
+        })
+      });
+
+      if (!makeWebhookResponse.ok) {
+        throw new Error('Make.com webhook submission failed');
       }
 
       setFormStatus({ submitting: false, submitted: true, error: null });

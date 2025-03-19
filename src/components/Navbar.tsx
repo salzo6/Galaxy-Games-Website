@@ -9,7 +9,14 @@ export default function Navbar() {
     <nav className="fixed w-full z-50 bg-black/50 backdrop-blur-lg border-b border-blue-900/30">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="font-flux text-2xl text-white">GALAXY TECH</Link>
+          <Link to="/" className="flex items-center gap-2">
+            <img 
+              src="/images/galaxytech-logo.png" 
+              alt="Galaxy Tech Logo" 
+              className="w-8 h-8"
+            />
+            <span className="font-flux text-2xl text-white">GALAXY TECH</span>
+          </Link>
           
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}

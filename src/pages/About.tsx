@@ -73,7 +73,7 @@ export default function About() {
               <img 
                 src="/images/gradphoto.png" 
                 alt="Salvatore Papia" 
-                className="w-64 h-64 object-cover rounded-full border-4 border-teal-500/50 relative z-10"
+                className="w-64 h-64 object-cover rounded-full border-4 border-teal-500/50 relative z-10 object-top"
               />
               
               <motion.div
