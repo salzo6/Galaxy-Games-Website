@@ -33,10 +33,10 @@ export default function MobileApps() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-4xl mx-auto my-8 px-4" // Applied width and centering
+          className="max-w-4xl mx-auto my-8 px-4"
         >
           <div
-            className="bg-blue-950/30 backdrop-blur-lg rounded-2xl p-8 border border-blue-900/50" // Applied card styling
+            className="bg-blue-950/30 backdrop-blur-lg rounded-2xl p-8 border border-blue-900/50"
           >
             <div className="flex flex-col md:flex-row items-center gap-6">
               <img
